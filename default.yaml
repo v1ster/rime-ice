@@ -10,6 +10,7 @@ config_version: '2026-02-06'
 schema_list:
   # 可以直接删除或注释不需要的方案，对应的 *.schema.yaml 方案文件也可以直接删除
   # 除了 t9，它依赖于 rime_ice，用九宫格别删 rime_ice.schema.yaml
+  - schema: double_pinyin_mspy_cust
   - schema: rime_ice               # 雾凇拼音（全拼）
   - schema: t9                     # 中文九键（仓输入法 & 元书输入法）
   - schema: double_pinyin          # 自然码双拼
@@ -32,10 +33,11 @@ menu:
 switcher:
   caption: 「方案选单」
   hotkeys:
-    - F4
-    - Control+grave
-    - Control+Shift+grave
+    # - F4
+    # - Control+grave
+    # - Control+Shift+grave
     # - Alt+grave
+    - Control+Shift+F4
   # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
   # 部分前端（如小企鹅），实现了全局状态，切换后在任何焦点都会记住；
   # 部分前端（如鼠须管），仅在当前会话中记住，每个App或一个App的不同输入框都会单独管理；
@@ -248,6 +250,7 @@ key_binder:
     - { when: always, toggle: traditionalization, accept: Control+Shift+dollar }  # 切换简繁
     # - { when: always, toggle: full_shape, accept: Control+Shift+5 }             # 切换全半角
     # - { when: always, toggle: full_shape, accept: Control+Shift+percent }       # 切换全半角
+    - { when: always, toggle: ascii_mode, accept: Control+space }
 
     # emacs_editing:
     # - { when: composing, accept: Control+p, send: Up }
