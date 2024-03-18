@@ -34,10 +34,10 @@ switcher:
   hotkeys:
     # - F4
     # - Control+grave
-    # - Alt+grave
     # - Control+Shift+grave
+    # - Alt+grave
     - Control+Shift+F4
-  save_options:  # 开关记忆，从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
+  save_options:  # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
     - ascii_punct
     - traditionalization
     - emoji
@@ -199,11 +199,16 @@ key_binder:
 
     # 两种按键配置，鼠须管 Control+Shift+4 生效，小狼毫 Control+Shift+dollar 生效，都写上了。
     # numbered_mode_switch:
-    # - { when: always, accept: Control+Shift+1, select: .next }               # 在最近的两个方案之间切换
-    # - { when: always, accept: Control+Shift+2, toggle: ascii_mode }          # 切换中英
-    - { when: always, accept: Control+Shift+3, toggle: ascii_punct }           # 切换中英标点
-    - { when: always, accept: Control+Shift+4, toggle: traditionalization }    # 切换简繁
-    # - { when: always, accept: Control+Shift+5, toggle: full_shape }          # 切换全半角
+    # - { when: always, select: .next, accept: Control+Shift+1 }                  # 在最近的两个方案之间切换
+    # - { when: always, select: .next, accept: Control+Shift+exclam }             # 在最近的两个方案之间切换
+    # - { when: always, toggle: ascii_mode, accept: Control+Shift+2 }             # 切换中英
+    # - { when: always, toggle: ascii_mode, accept: Control+Shift+at }            # 切换中英
+    - { when: always, toggle: ascii_punct, accept: Control+Shift+3 }              # 切换中英标点
+    - { when: always, toggle: ascii_punct, accept: Control+Shift+numbersign }     # 切换中英标点
+    - { when: always, toggle: traditionalization, accept: Control+Shift+4 }       # 切换简繁
+    - { when: always, toggle: traditionalization, accept: Control+Shift+dollar }  # 切换简繁
+    # - { when: always, toggle: full_shape, accept: Control+Shift+5 }             # 切换全半角
+    # - { when: always, toggle: full_shape, accept: Control+Shift+percent }       # 切换全半角
     - { when: always, accept: Control+space, toggle: ascii_mode }
 
     # emacs_editing:
